@@ -10,12 +10,11 @@ public class RequestHandler : MonoBehaviour
     public event UnityAction<string> DataDownloaded;
     private void Start()
     {
-        StartCoroutine(SendRequestsWithInterval());
+        SendGetRequest();
     }
     private void SendGetRequest()
     {
         string data = WebServerEmulator.GetJsonData();
-        Debug.Log(data);
         DataDownloaded?.Invoke(data);
     }
     // Корутина которая отправляет Get-запрос  каждые 10 секунд;
