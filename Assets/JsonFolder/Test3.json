@@ -1,0 +1,42 @@
+{
+  "name": "TestTable",
+  "id": 1,
+  "modifiedData": "12-11-2019",
+  "data": [
+    {
+      "modifiedData": "22-11-2019",
+      "coordinate": {"x": 10,"y":10,"z":10},
+      "name": "Batman",
+      "id": 1,
+      "type": 1
+    },
+    {
+      "modifiedData": "31-10-2019",
+      "coordinate": {"x": 1,"y":1,"z":2},
+      "name": "Joker",
+      "id": 2,
+      "type": 0
+    },
+    {
+      "modifiedData": "21-11-2019",
+      "coordinate": {"x": 2,"y":2,"z":4},
+      "name": "Cobblepot",
+      "id": 3,
+      "type": 2
+    },
+    {
+      "modifiedData": "21-10-2019",
+      "coordinate": {"x": -5,"y":-5,"z":0},
+      "name": "Riddler",
+      "id": 4,
+      "type": 0
+    },
+    {
+      "modifiedData": "8-10-2019",
+      "coordinate": {"x": 0,"y":8,"z":1},
+      "name": "TESTER",
+      "id": 5,
+      "type": 0
+    }
+  ]
+}
