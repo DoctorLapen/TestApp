@@ -1,11 +1,11 @@
 {
   "name": "TestTable",
   "id": 1,
-  "modifiedData": "22-11-2019",
+  "modifiedData": "24-11-2019",
   "data": [
     {
-      "modifiedData": "22-11-2019",
-      "coordinate": {"x": 10,"y":10,"z":10},
+      "modifiedData": "23-11-2019",
+      "coordinate": {"x": 1,"y":4,"z":2},
       "name": "Batman",
       "id": 1,
       "type": 1
@@ -32,8 +32,8 @@
       "type": 0
     },
     {
-      "modifiedData": "31-10-2019",
-      "coordinate": {"x": 1,"y":1,"z":1},
+      "modifiedData": "24-10-2019",
+      "coordinate": {"x": 2,"y":2,"z":0},
       "name": "TESTER",
       "id": 5,
       "type": 0
