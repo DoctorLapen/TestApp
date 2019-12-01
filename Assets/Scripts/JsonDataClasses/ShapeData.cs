@@ -8,10 +8,12 @@ public class ShapeData
     public Vector3 coordinate;
     public string name;
     public int id;
-    public enum type
-    {
-        Red,
-        Green,
-        Blue
-    };
+    public  TypeEnum type;
 }
+[Serializable]
+public enum TypeEnum
+{
+    Red,
+    Green,
+    Blue
+};
