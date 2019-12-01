@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 // Класс для спауна фигур
 public class ShapeSpawner : MonoBehaviour
-{   //Массив префабов фигур
+{  
+    
+    //Массив префабов фигур
     public GameObject[] ShapePrefab = new GameObject[5];
 
     [SerializeField]
     private ShapeMoveController moveController;
+    //Родителский объект для фигур
+    [SerializeField]
+    private GameObject parent;
 
     private void Start()
     {
@@ -17,7 +22,8 @@ public class ShapeSpawner : MonoBehaviour
     */
         for ( int i = 0; i< 5; i++)
         {
-            moveController.ShapesArr[i] = Instantiate(ShapePrefab[i], Vector3.zero,Quaternion.identity);
+            moveController.ShapesArr[i] = Instantiate(ShapePrefab[i],
+                                          Vector3.zero,Quaternion.identity,parent.transform);
         }       
     }    
 }
