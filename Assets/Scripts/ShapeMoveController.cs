@@ -17,6 +17,8 @@ public class ShapeMoveController : MonoBehaviour
     private ShapeData[] curShapeData;
     //Поле для хранения массива ShapeData новых данных
     private ShapeData[] newShapeData;
+    //Поле для хранения массива ShapeData данных для стартового перемещения
+    private ShapeData[] DataForFirstMove;
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class ShapeMoveController : MonoBehaviour
     //Метод-обработчик события DataNotChanged 
     private void OnDataNotChange(ShapeData[] data)
     {
-        curShapeData = data;
+        DataForFirstMove = data;
     }
     /*
      * Метод-обработчик события DataNotChanged 
@@ -39,6 +41,7 @@ public class ShapeMoveController : MonoBehaviour
     */
     private void OnDataChanged(DataChangedEventArgs e)
     {
+        DataForFirstMove = e.NewData;
         curShapeData = e.OldData;
         newShapeData = e.NewData;
         if (isNoFirstShapesMoving) MoveShapes();
@@ -53,17 +56,17 @@ public class ShapeMoveController : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         for ( int i = 0; i < 5; i++)
-        {
-            ShapesArr[i].transform.position =  curShapeData[i].coordinate;           
-            ShapesArr[i].GetComponent<Shape>().ChangeData(curShapeData[i]);
+        {   
+            StartCoroutine(MoveShape(ShapesArr[i].transform, DataForFirstMove[i].coordinate));
+            ShapesArr[i].GetComponent<Shape>().ChangeData(DataForFirstMove[i]);
         }
         isNoFirstShapesMoving = true;       
     }
     /*
-    * Метод который двигает фигуры
-    * если их координаты изменились в новых данных
-    * и передает новые данные в фигуры
-   */
+     * Метод который двигает фигуры
+     * если их координаты изменились в новых данных
+     * и передает новые данные в фигуры
+    */
     private void MoveShapes()
     {
         for ( int i = 0; i < 5; i++)
@@ -72,10 +75,24 @@ public class ShapeMoveController : MonoBehaviour
             if (curShapeData[i].coordinate != newShapeData[i].coordinate)
             {
                 data = newShapeData[i];
-                ShapesArr[i].transform.position = newShapeData[i].coordinate;
+                StartCoroutine(MoveShape(ShapesArr[i].transform, newShapeData[i].coordinate));
             }
             else data = curShapeData[i];
             ShapesArr[i].GetComponent<Shape>().ChangeData(data);
+        }
+    }
+    /*
+     * Корутина которая двигает фигуры к target
+     * на maxDistanceDelta = 1
+     * каждые 0,1 секунды
+     * по фигура не достигнет target
+    */
+    private IEnumerator MoveShape(Transform shape,Vector3 target)
+    {
+        while (shape.position != target)
+        {
+            shape.position = Vector3.MoveTowards(shape.position,target,1);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
