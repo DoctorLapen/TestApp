@@ -164,6 +164,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &566945542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 566945543}
+  m_Layer: 0
+  m_Name: Shapes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &566945543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566945542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,13 +361,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.18698542, y: -0, z: -0, w: 0.98236275}
+  m_LocalPosition: {x: 0, y: 10.42, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21.554, y: 0, z: 0}
 --- !u!1 &1021732719
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb832da4854510848b2cd266329f34d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: https://owncloud.lindenvalley.de/index.php/s/lXIIkptI7tKJRL8/download
 --- !u!1 &1255199921
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +448,7 @@ MonoBehaviour:
   - {fileID: 4601774463888803743, guid: c09aa23ae30f1454aad7ff17e1841b3c, type: 3}
   - {fileID: 7256547749891638483, guid: 30abe1408f5461c40950851f95d0c0bb, type: 3}
   moveController: {fileID: 2077049803}
+  parent: {fileID: 566945542}
 --- !u!4 &1255199923
 Transform:
   m_ObjectHideFlags: 0
